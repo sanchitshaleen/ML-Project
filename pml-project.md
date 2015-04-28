@@ -36,9 +36,9 @@ After studying the summary of the training data, a number of cleaning actions ar
 
 
 ```r
-#remove columns with over a 90% of not a number
+#remove columns with over a 60% of missing values
 nasPerColumn<- apply(training,2,function(x) {sum(is.na(x))});
-training <- training[,which(nasPerColumn <  nrow(training)*0.9)];  
+training <- training[,which(nasPerColumn <  nrow(training)*0.4)];  
   
 #remove near zero variance predictors
 nearZeroColumns <- nearZeroVar(training, saveMetrics = TRUE)

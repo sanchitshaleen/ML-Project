@@ -81,9 +81,9 @@ test  &lt;- read.csv('pml-testing.csv')</code></pre>
 <div id="cleaning-data" class="section level2">
 <h2>Cleaning data</h2>
 <p>After studying the summary of the training data, a number of cleaning actions are undertaken: - Removing columns with over a 90% of not a number - Removing near zero variance predictors - remove not relevant columns for classification (x, user name, raw time stamp 1 and 2, new window and num window). - Convert class into factor</p>
-<pre class="r"><code>#remove columns with over a 90% of not a number
+<pre class="r"><code>#remove columns with over 60% missing values
 nasPerColumn&lt;- apply(training,2,function(x) {sum(is.na(x))});
-training &lt;- training[,which(nasPerColumn &lt;  nrow(training)*0.9)];  
+training &lt;- training[,which(nasPerColumn &lt;  nrow(training)*0.4)];  
   
 #remove near zero variance predictors
 nearZeroColumns &lt;- nearZeroVar(training, saveMetrics = TRUE)
