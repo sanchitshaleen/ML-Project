@@ -1,3 +1,4 @@
-Repository for Coursera _Practical Machine Learning_ course
+## Practical Machine Learning Course Project
 
-http://sanchitshaleen.github.io/MachineLearning/
+
+Please, follow this [http://emilioserra.github.io/datasciencecoursera](http://emilioserra.github.io/datasciencecoursera)
